@@ -1,58 +1,96 @@
 # AWS Monitoring Script
 
-This repository contains a Python script designed to monitor the health of AWS resources and send notifications to Slack when issues are detected. The script performs health checks on EC2 instances, RDS instances, ELB load balancers, and DynamoDB tables.
+This repository contains a zip file of a Python script designed to monitor the health of AWS resources and send notifications to Slack when issues are detected. The script performs health checks on EC2 instances, RDS instances, ELB load balancers, and DynamoDB tables.
 
 ## Features
 
-- **EC2 Health Checks**: Monitors the status of EC2 instances and sends notifications if any instance is not in an `ok` state.
-- **RDS Health Checks**: Checks the status of RDS instances and sends notifications if any instance is not `available`.
-- **ELB Health Checks**: Monitors the health of targets behind ELB load balancers and sends notifications if any target is not `healthy`.
-- **DynamoDB Checks**: Confirms the availability of DynamoDB tables and sends notifications if there is an error accessing tables.
+### EC2 Health Checks
+- Monitors the status of EC2 instances.
+- Sends a Slack notification if any instance is not in an `ok` state.
 
-## Prerequisites
+### RDS Health Checks
+- Checks the status of RDS instances.
+- Sends a Slack notification if any instance is not `available`.
 
-- **Docker**: Ensure Docker is installed on your system. [Install Docker](https://docs.docker.com/get-docker/).
-- **AWS Credentials**: Ensure your AWS credentials are set up in the environment where the container runs. The script uses `boto3` to interact with AWS services.
+### ELB Health Checks
+- Monitors the health of targets behind ELB (Elastic Load Balancer).
+- Sends a Slack notification if any target is not `healthy`.
 
-## Environment Variables
+### DynamoDB Checks
+- Confirms the availability of DynamoDB tables.
+- Sends a Slack notification if any table is not in `ACTIVE` state or if there’s an error accessing tables.
 
-- **SLACK_WEBHOOK_URL**: Your Slack webhook URL for sending notifications. Set this environment variable when running the Docker container.
+## Setup Instructions
 
-## Getting Started
+1. **Slack Setup**:
+   - First, set up slack locally or over the browser and create a workspace.
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 03 53 AM" src="https://github.com/user-attachments/assets/b6ff91a0-6c54-4eb4-9859-943645190d2c">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 05 04 AM" src="https://github.com/user-attachments/assets/d0b616de-4f43-4543-8d14-015a1dd579a3">
+   - Get the Slack Webhook URL. You can follow the instructions [here](https://api.slack.com/messaging/webhooks) to learn how to get webhook URL in your Slack application.
+   - Add a custom app in your Slack application from scratch and get the webhook URL
+     <img width="1440" alt="Screenshot 2024-09-19 at 4 05 30 AM" src="https://github.com/user-attachments/assets/b335c6f2-1879-4a57-a170-cecebfdbbf96">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 17 09 AM" src="https://github.com/user-attachments/assets/8ecd85df-d0fe-4783-bc13-a2b3a6963277">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 17 09 AM" src="https://github.com/user-attachments/assets/2b759e98-f435-4bae-b0ee-bb8fd342f6f7">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 18 26 AM" src="https://github.com/user-attachments/assets/7771d12d-1783-407c-a7c7-389ce94b157a">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 18 57 AM" src="https://github.com/user-attachments/assets/47d51193-acd8-48b5-b085-dda8ad8a04cc">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 19 06 AM" src="https://github.com/user-attachments/assets/3b2eac6d-10d8-422d-86cb-13d7721f6e12">
+     <img width="1440" alt="Screenshot 2024-09-19 at 12 19 16 AM" src="https://github.com/user-attachments/assets/479d0cc4-3deb-4879-8afc-08d1e842cf1d">
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/aws-monitoring-script.git
-   cd aws-monitoring-script
 
-2. **Build the Docker Image**
+3. **IAM Permissions**:
+   - Ensure your Lambda function has a inline policy attached with the necessary permissions to access EC2, RDS, ELB, and DynamoDB services. Use the following JSON policy:
 
-docker build -t aws-monitoring-script . 
+   ```json
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Sid": "Statement1",
+               "Effect": "Allow",
+               "Action": [
+                   "ec2:DescribeInstanceStatus",
+                   "rds:DescribeDBInstances",
+                   "elasticloadbalancing:DescribeLoadBalancers",
+                   "elasticloadbalancing:DescribeTargetGroups",
+                   "elasticloadbalancing:DescribeTargetHealth",
+                   "dynamodb:ListTables",
+                   "dynamodb:DescribeTable"
+               ],
+               "Resource": "*"
+           }
+       ]
+   }
+4. **Deploy the Lambda Function**:
+   - Upload the zip file of this code into your lambda function.
+     <img width="1440" alt="image" src="https://github.com/user-attachments/assets/c519eedb-f374-4938-ac1b-f818aa5530b9">
+     <img width="1440" alt="image" src="https://github.com/user-attachments/assets/fe7670a1-1872-429a-b924-b7d5ab51d091">
+   - Set the Slack Webhook URL as a environment variable in your lambda configuration.
+     <img width="1440" alt="image" src="https://github.com/user-attachments/assets/56945cf9-cdaf-44e2-910b-170ad360c938">
+     
 
-3. **Run the Docker Container**
-   ```bash
-   docker run -e SLACK_WEBHOOK_URL="your_slack_webhook_url" aws-monitoring-script
-Replace "your_slack_webhook_url" with your actual Slack webhook URL.
 
-4. Verify the Script is Running
-Check the logs to ensure the script is running as expected and sending notifications to Slack. You can view the logs using:
-   ```bash
-   docker logs <container_id>  
-Replace <container_id> with the ID of your running container, which you can obtain using docker ps.
 
-5. **Script Details**
-File: your_script.py
-Dependencies: boto3
 
-6. **Contributing**
-If you have suggestions or improvements, please open an issue or submit a pull request.
+  
+5. **Setup cloudwatch rule to trigger the lambda function every 10 minutes**.
+   <img width="1440" alt="image" src="https://github.com/user-attachments/assets/b288bedf-72bf-4c78-95d5-0e960d6f5fb4">
+   <img width="1440" alt="image" src="https://github.com/user-attachments/assets/65dd0c06-4ea9-47f6-849c-4a8dff571bd3">
+   <img width="1440" alt="image" src="https://github.com/user-attachments/assets/a1a605fc-6862-4cd6-afe6-d0fc0917fe80">
+   <img width="1440" alt="image" src="https://github.com/user-attachments/assets/20a66706-572c-4f2e-aeb5-b7b5dcad02e2">
 
-7. **License**
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Instructions:
 
-1. **Replace placeholders**: Replace `yourusername` with your GitHub username and `your_script.py` with the actual name of your script file if it's different.
-2. **Add a License**: If you use a license, include the `LICENSE` file in the repository; otherwise, adjust the license section as needed.
+7. **Testing**:
+   - Trigger the Lambda function to ensure it correctly monitors the services and sends notifications.
+   <img width="1440" alt="Screenshot 2024-09-19 at 4 17 17 AM" src="https://github.com/user-attachments/assets/0e14fdae-05d8-4dc1-b72c-d9127a48b008">
 
-Feel free to adjust the content according to your needs or add any additional sections relevant to you
+
+## Functional Logging in Cloudwatch and Notifications in Slack
+- The function logs gets stored in cloudwatch log group with timestamps and notifications are coming on slack in realtime.
+  <img width="1438" alt="image" src="https://github.com/user-attachments/assets/766aad56-7ae3-4c2b-9de3-f4a81d97ef1e">
+  <img width="1439" alt="image" src="https://github.com/user-attachments/assets/45f2f165-b2a4-4076-b524-07ec5ecd95f7">
+  ![image](https://github.com/user-attachments/assets/e5b605fb-ec29-4710-bf07-9230bbf94969)
+
+
+## Conclusion
+This Lambda function monitors important AWS services and helps you quickly fix any issues by sending notifications to Slack.
