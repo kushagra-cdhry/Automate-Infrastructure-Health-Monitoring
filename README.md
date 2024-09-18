@@ -1,4 +1,4 @@
-# AWS Monitoring Script
+# Automate Infrastructure Health Monitoring
 
 This repository contains a zip file of a Python script designed to monitor the health of AWS resources and send notifications to Slack when issues are detected. The script performs health checks on EC2 instances, RDS instances, ELB load balancers, and DynamoDB tables.
 
