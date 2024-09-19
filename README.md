@@ -62,11 +62,8 @@ This repository contains a zip file of a Python script designed to monitor the h
      <img width="1440" alt="image" src="https://github.com/user-attachments/assets/56945cf9-cdaf-44e2-910b-170ad360c938">
      
 
-
-
-
   
-4. **Setup cloudwatch rule to trigger the lambda function and schedule it for the desired time you want your lambda function to get triggered and then select the target which is again the lambda function you want to trigger**.
+4. **Setup cloudwatch rule to trigger the lambda function and schedule it for the desired time you want your function to get triggered and then select your function as target**.
    - Go to Cloudwatch > Rules > Create Rule
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/65dd0c06-4ea9-47f6-849c-4a8dff571bd3">
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/20a66706-572c-4f2e-aeb5-b7b5dcad02e2">
@@ -74,7 +71,7 @@ This repository contains a zip file of a Python script designed to monitor the h
 
 
 5. **Testing**:
-   - Trigger the Lambda function manually first to ensure it correctly monitors the services and sends notifications.
+   - Trigger the Lambda function manually first to ensure it correctly monitors the services and sends notifications:
      <img width="1440" alt="Screenshot 2024-09-19 at 4 17 17 AM" src="https://github.com/user-attachments/assets/0e14fdae-05d8-4dc1-b72c-d9127a48b008">
 
 
