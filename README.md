@@ -29,9 +29,6 @@ This repository contains a zip file of a Python script designed to monitor the h
    - Add a custom app in your Slack application from scratch and get the webhook URL
      <img width="1440" alt="Screenshot 2024-09-19 at 4 05 30 AM" src="https://github.com/user-attachments/assets/b335c6f2-1879-4a57-a170-cecebfdbbf96">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 17 09 AM" src="https://github.com/user-attachments/assets/8ecd85df-d0fe-4783-bc13-a2b3a6963277">
-     <img width="1440" alt="Screenshot 2024-09-19 at 12 18 26 AM" src="https://github.com/user-attachments/assets/7771d12d-1783-407c-a7c7-389ce94b157a">
-     <img width="1440" alt="Screenshot 2024-09-19 at 12 18 57 AM" src="https://github.com/user-attachments/assets/47d51193-acd8-48b5-b085-dda8ad8a04cc">
-     <img width="1440" alt="Screenshot 2024-09-19 at 12 19 06 AM" src="https://github.com/user-attachments/assets/3b2eac6d-10d8-422d-86cb-13d7721f6e12">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 19 16 AM" src="https://github.com/user-attachments/assets/479d0cc4-3deb-4879-8afc-08d1e842cf1d">
 
 
