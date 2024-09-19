@@ -74,7 +74,7 @@ This repository contains a zip file of a Python script designed to monitor the h
 
 
 7. **Testing**:
-   - Trigger the Lambda function to ensure it correctly monitors the services and sends notifications.
+   - Trigger the Lambda function manually first to ensure it correctly monitors the services and sends notifications.
    <img width="1440" alt="Screenshot 2024-09-19 at 4 17 17 AM" src="https://github.com/user-attachments/assets/0e14fdae-05d8-4dc1-b72c-d9127a48b008">
 
 
