@@ -66,7 +66,7 @@ This repository contains a zip file of a Python script designed to monitor the h
 
 
   
-5. **Setup cloudwatch rule to trigger the lambda function every 10 minutes**.
+5. **Setup cloudwatch rule to trigger the lambda function and schedule it for the desired time you want your lambda finction to get triggered**.
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/b288bedf-72bf-4c78-95d5-0e960d6f5fb4">
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/65dd0c06-4ea9-47f6-849c-4a8dff571bd3">
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/a1a605fc-6862-4cd6-afe6-d0fc0917fe80">
