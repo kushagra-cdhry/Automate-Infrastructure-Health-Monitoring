@@ -67,7 +67,7 @@ This repository contains a zip file of a Python script designed to monitor the h
 
   
 5. **Setup cloudwatch rule to trigger the lambda function and schedule it for the desired time you want your lambda function to get triggered and then select the target which is again the lambda function you want to trigger**.
-   <img width="1440" alt="image" src="https://github.com/user-attachments/assets/b288bedf-72bf-4c78-95d5-0e960d6f5fb4">
+   - Go to Cloudwatch > Rule > Create Rule
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/65dd0c06-4ea9-47f6-849c-4a8dff571bd3">
    <img width="1440" alt="image" src="https://github.com/user-attachments/assets/20a66706-572c-4f2e-aeb5-b7b5dcad02e2">
 
