@@ -60,7 +60,6 @@ This repository contains a zip file of a Python script designed to monitor the h
    }
 4. **Deploy the Lambda Function**:
    - Upload the zip file given in the repository into your lambda function.
-     <img width="1440" alt="image" src="https://github.com/user-attachments/assets/c519eedb-f374-4938-ac1b-f818aa5530b9">
      <img width="1440" alt="image" src="https://github.com/user-attachments/assets/fe7670a1-1872-429a-b924-b7d5ab51d091">
    - Set the Slack Webhook URL as a environment variable in your lambda configuration.
      <img width="1440" alt="image" src="https://github.com/user-attachments/assets/56945cf9-cdaf-44e2-910b-170ad360c938">
