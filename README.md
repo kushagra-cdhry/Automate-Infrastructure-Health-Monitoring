@@ -24,13 +24,11 @@ This repository contains a zip file of a Python script designed to monitor the h
 
 1. **Slack Setup**:
    - First, set up slack locally or over the browser and create a workspace.
-     <img width="1440" alt="Screenshot 2024-09-19 at 12 03 53 AM" src="https://github.com/user-attachments/assets/b6ff91a0-6c54-4eb4-9859-943645190d2c">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 05 04 AM" src="https://github.com/user-attachments/assets/d0b616de-4f43-4543-8d14-015a1dd579a3">
    - Get the Slack Webhook URL. You can follow the instructions [here](https://api.slack.com/messaging/webhooks) to learn how to get webhook URL in your Slack application.
    - Add a custom app in your Slack application from scratch and get the webhook URL
      <img width="1440" alt="Screenshot 2024-09-19 at 4 05 30 AM" src="https://github.com/user-attachments/assets/b335c6f2-1879-4a57-a170-cecebfdbbf96">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 17 09 AM" src="https://github.com/user-attachments/assets/8ecd85df-d0fe-4783-bc13-a2b3a6963277">
-     <img width="1440" alt="Screenshot 2024-09-19 at 12 17 09 AM" src="https://github.com/user-attachments/assets/2b759e98-f435-4bae-b0ee-bb8fd342f6f7">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 18 26 AM" src="https://github.com/user-attachments/assets/7771d12d-1783-407c-a7c7-389ce94b157a">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 18 57 AM" src="https://github.com/user-attachments/assets/47d51193-acd8-48b5-b085-dda8ad8a04cc">
      <img width="1440" alt="Screenshot 2024-09-19 at 12 19 06 AM" src="https://github.com/user-attachments/assets/3b2eac6d-10d8-422d-86cb-13d7721f6e12">
