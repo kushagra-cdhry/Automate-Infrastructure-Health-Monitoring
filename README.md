@@ -75,14 +75,14 @@ This repository contains a zip file of a Python script designed to monitor the h
 
 5. **Testing**:
    - Trigger the Lambda function manually first to ensure it correctly monitors the services and sends notifications.
-   <img width="1440" alt="Screenshot 2024-09-19 at 4 17 17 AM" src="https://github.com/user-attachments/assets/0e14fdae-05d8-4dc1-b72c-d9127a48b008">
+     <img width="1440" alt="Screenshot 2024-09-19 at 4 17 17 AM" src="https://github.com/user-attachments/assets/0e14fdae-05d8-4dc1-b72c-d9127a48b008">
 
 
-6. Functional Logging in Cloudwatch and Notifications in Slack
-- The function logs gets stored in cloudwatch log group with timestamps and notifications are coming on slack in realtime.
-  <img width="1438" alt="image" src="https://github.com/user-attachments/assets/766aad56-7ae3-4c2b-9de3-f4a81d97ef1e">
-  <img width="1439" alt="image" src="https://github.com/user-attachments/assets/45f2f165-b2a4-4076-b524-07ec5ecd95f7">
-  ![image](https://github.com/user-attachments/assets/e5b605fb-ec29-4710-bf07-9230bbf94969)
+6. **Functional Logging in Cloudwatch and Notifications in Slack**:
+   - The function logs gets stored in cloudwatch log group with timestamps and notifications are coming on slack in realtime.
+     <img width="1438" alt="image" src="https://github.com/user-attachments/assets/766aad56-7ae3-4c2b-9de3-f4a81d97ef1e">
+     <img width="1439" alt="image" src="https://github.com/user-attachments/assets/45f2f165-b2a4-4076-b524-07ec5ecd95f7">
+     ![image](https://github.com/user-attachments/assets/e5b605fb-ec29-4710-bf07-9230bbf94969)
 
 
 ## Conclusion
