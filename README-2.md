@@ -36,7 +36,7 @@ This includes the same features as the previous one so you can refer README.md f
 4. **Create Docker image from the given Dockerfile in the repository, push it to ECR and then Deploy the Lambda Function from this container image**:
    - Push the image to ECR.
      ![image](https://github.com/user-attachments/assets/842dba5b-1a19-4d00-9500-049e851f3fd3)
-   - Crete the lambda function from this container image and carefully choose the architecture of function. If yor created yor image on arm architecture based system (Mac) then select arm, otherwise selct x86_64 if you created your image from Windows.
+   - Crete the lambda function from this container image and carefully choose the architecture of function. If you created yor image on arm architecture based system (Mac) then select arm, otherwise selct x86_64 if you created your image from Windows.
      ![image](https://github.com/user-attachments/assets/e732fa3c-598d-4dad-b9ff-6f4e34821652)
    - Set the Slack Webhook URL as a environment variable in your lambda configuration.
      <img width="1440" alt="image" src="https://github.com/user-attachments/assets/56945cf9-cdaf-44e2-910b-170ad360c938">
